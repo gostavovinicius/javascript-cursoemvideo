@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - IMC</title>
+    <style>
+        body {
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var nome = window.prompt('Qual é seu nome?')
+        var altura = Number(window.prompt('Qual a sua altura?').replace(',', '.'))
+        var peso = Number(window.prompt('Qual o seu peso?').replace(',', '.'))
+        var imc = peso/(altura**2)
+        
+        if (imc <= 18.5) {
+            document.write(`${nome} seu IMC é de ${imc.toFixed(2)} e a classificação é Magreza`)
+        } else if (imc > 18.5 && imc <= 24.9) {
+            document.write(`${nome} seu IMC é de ${imc.toFixed(2)} e a classificação é Normal`)
+        } else if (imc > 24.9 && imc <= 29.9) {
+            document.write(`${nome} seu IMC é de ${imc.toFixed(2)} e a classificação é Sobrepeso`)
+        } else if (imc > 30.0 && imc <= 39.9) {
+            document.write(`${nome} seu IMC é de ${imc.toFixed(2)} e a classificação é Obesidade`)
+        } else if (imc > 39.9) {
+            document.write(`${nome} seu IMC é de ${imc.toFixed(2)} e a classificação é Obesidade Grave`)
+        }
+    </script>
+</body>
+</html>
