@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Páis</title>
+</head>
+<body>
+    <h1>Em qual país vive</h1>
+    <p>Digite seu país</p>
+    <input type="text" name="txtpaís" id="txtpaís">
+    <input type="button" value="Clicar" onclick="país()">
+    <div id="res">
+
+    </div>
+
+    <script>
+        function país() {
+        var país = window.document.querySelector('input#txtpaís').value
+        var res = window.document.querySelector('div#res')
+        res.innerHTML = `<p>Seu país é ${país}</p>`
+        if (país != 'Brasil') {
+            res.innerHTML +=  '<p>Você é Estrangeiro!</p>'
+        } else {
+            res.innerHTML += '<p>Você é Brasileiro!</p>'
+        }
+        }
+    </script>
+</body>
+</html>
