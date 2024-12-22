@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,24 +11,41 @@
         }
     </style>
 </head>
+
 <body>
+    <h1>Calculadora de IMC</h1>
+    <label for="altura">Altura:</label>
+    <input type="number" name="altura" id="altura">
+    <label for="peso">Peso:</label>
+    <input type="number" name="peso" id="peso">
+    <input type="button" value="calcular" onclick="calcular()">
+
+    <div id="res">
+        Resultado
+    </div>
+
+
     <script>
-        var nome = window.prompt('Qual é seu nome?')
-        var altura = Number(window.prompt('Qual a sua altura?').replace(',', '.'))
-        var peso = Number(window.prompt('Qual o seu peso?').replace(',', '.'))
-        var imc = peso/(altura**2)
-        
-        if (imc <= 18.5) {
-            document.write(`${nome} seu IMC é de ${imc.toFixed(2)} e a classificação é Magreza`)
-        } else if (imc > 18.5 && imc <= 24.9) {
-            document.write(`${nome} seu IMC é de ${imc.toFixed(2)} e a classificação é Normal`)
-        } else if (imc > 24.9 && imc <= 29.9) {
-            document.write(`${nome} seu IMC é de ${imc.toFixed(2)} e a classificação é Sobrepeso`)
-        } else if (imc > 30.0 && imc <= 39.9) {
-            document.write(`${nome} seu IMC é de ${imc.toFixed(2)} e a classificação é Obesidade`)
-        } else if (imc > 39.9) {
-            document.write(`${nome} seu IMC é de ${imc.toFixed(2)} e a classificação é Obesidade Grave`)
+        function calcular() {
+            var altura = window.document.getElementById('altura')
+            var peso = window.document.getElementById('peso')
+            var res = window.document.querySelector('div#res')
+            var n1 = Number(altura.value)
+            var n2 = Number(peso.value)
+            var imc = n2 / (n1 ** 2)
+            if (imc <= 18.5) {
+                res.innerHTML = `Seu IMC é de ${imc.toFixed(2)} e a classificação é Magreza`
+            } else if (imc > 18.5 && imc <= 24.9) {
+                res.innerHTML = `Seu IMC é de ${imc.toFixed(2)} e a classificação é Normal`
+            } else if (imc > 24.9 && imc <= 29.9) {
+                res.innerHTML = `Seu IMC é de ${imc.toFixed(2)} e a classificação é Sobrepeso`
+            } else if (imc > 30.0 && imc <= 39.9) {
+                res.innerHTML = `Seu IMC é de ${imc.toFixed(2)} e a classificação é Obesidade`
+            } else if (imc > 39.9) {
+                res.innerHTML = `Seu IMC é de ${imc.toFixed(2)} e a classificação é Obesidade Grave`
+            }
         }
     </script>
 </body>
+
 </html>
