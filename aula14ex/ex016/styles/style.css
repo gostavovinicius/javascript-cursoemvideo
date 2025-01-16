@@ -1,7 +1,13 @@
 @charset "UTF-8";
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background-color: rgb(46, 142, 233);
+    background: rgb(46, 142, 233);
     font: normal 15pt Arial;
 }
 
